@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TemplateEngine.Docx.Example</RootNamespace>
     <AssemblyName>TemplateEngine.Docx.Example</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFrameworkProfile>
@@ -62,12 +62,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TemplateEngine.Docx\TemplateEngine.Docx.csproj">
-      <Project>{b6320046-b27f-41e7-9aa7-c2ee252c0da5}</Project>
-      <Name>TemplateEngine.Docx</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="app.config" />
     <None Include="InputTemplate.docx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -87,6 +81,12 @@
     <Content Include="Tesla.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TemplateEngine.Docx\TemplateEngine.Docx.csproj">
+      <Project>{b6320046-b27f-41e7-9aa7-c2ee252c0da5}</Project>
+      <Name>TemplateEngine.Docx</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

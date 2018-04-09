@@ -52,5 +52,11 @@ namespace TemplateEngine.Docx
 		public static XName rStyle = w + "rStyle";
 		public static XName br = w + "br";
         public static XName drawing = w + "drawing";
+        public static XName rFonts = w + "rFonts";
+        public static XName ascii = w + "ascii";
+        public static XName eastAsia = w + "eastAsia";
+        public static XName hAnsi = w + "hAnsi";
+        public static XName date = w + "date";
+        public static XName dateFormat = w + "dateFormat";
     }
 }

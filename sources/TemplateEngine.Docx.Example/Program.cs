@@ -7,6 +7,8 @@ namespace TemplateEngine.Docx.Example
 	{
 		static void Main(string[] args)
 		{
+            DateTest();
+            CheckboxTest();
 			File.Delete("OutputDocument.docx");
             File.Copy("InputTemplate.docx", "OutputDocument.docx");
 
@@ -245,5 +247,48 @@ namespace TemplateEngine.Docx.Example
                 outputDocument.SaveChanges();
             }
         }
-	}
+
+        static void CheckboxTest()
+        {
+            File.Delete("OutputCheckboxTest.docx");
+            File.Copy("CheckboxTest.docx", "OutputCheckboxTest.docx");
+
+            var valuesToFill = new Content(
+                //new ChartContent("Chart"),
+
+                // Add field.
+                new FieldContent("chkChecked", true),
+                new FieldContent("chkUnchecked", false)
+            );
+
+            using (var outputDocument = new TemplateProcessor("OutputCheckboxTest.docx")
+               .SetRemoveContentControls(true))
+            {
+                outputDocument.FillContent(valuesToFill);
+                outputDocument.SaveChanges();
+            }
+        }
+
+        static void DateTest()
+        {
+            File.Delete("OutputDateTest.docx");
+            File.Copy("DateTest.docx", "OutputDateTest.docx");
+
+            var valuesToFill = new Content(
+                //new ChartContent("Chart"),
+
+                // Add field.
+                new FieldContent("Date_Test", new DateTime(2078, 04, 13))
+            );
+
+            using (var outputDocument = new TemplateProcessor("OutputDateTest.docx")
+               .SetRemoveContentControls(true))
+            {
+                outputDocument.FillContent(valuesToFill);
+                outputDocument.SaveChanges();
+            }
+        }
+
+
+    }
 }
